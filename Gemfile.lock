@@ -194,11 +194,11 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
-  guard-minitest (= 2.3.1)
+  guard-minitest
   jbuilder (~> 2.0)
   jquery-rails
-  mini_backtrace (= 0.1.3)
-  minitest-reporters (= 1.0.5)
+  mini_backtrace
+  minitest-reporters
   pg
   rails (= 4.2.2)
   rails_12factor
