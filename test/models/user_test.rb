@@ -68,4 +68,11 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a"*5
     assert_not @user.valid?
   end
+
+  test "Email Must be downcased before save!" do
+    mix = "AbCjsndE@ExAmPle.CoM"
+    @user.email = mix
+    @user.save
+    assert_equal mix.downcase, @user.reload.email
+  end
 end
