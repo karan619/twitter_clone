@@ -1,0 +1,10 @@
+<% provide(:title, @user.name) %>
+<div class="pull-left">
+  <div class="thumbnail">
+    <%= gravatar_for(@user) %>
+    <div class="caption">
+<hr/>
+      <h1><%= @user.name %></h1>
+    </div>
+  </div>
+</div>
