@@ -2,7 +2,11 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "karan", email: "karan.valecha92@gmail.com", password: "foobar", password_confirmation: "foobar" )
+    @user = User.new(name: "example", email: "example@example.com", password: "password", password_confirmation: "password" )
+  end
+
+  test "Error for nil digest" do
+    assert_not @user.authenticated?('')
   end
   
   test "User must be valid" do
