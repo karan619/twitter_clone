@@ -59,3 +59,9 @@ group :production do
   gem 'puma'#Make puma as a server for heroku
 end
 gem 'bootstrap-sass'
+
+# Let's fake it
+  gem 'faker'
+#page it
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'

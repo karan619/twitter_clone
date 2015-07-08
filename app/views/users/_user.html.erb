@@ -1,0 +1,6 @@
+<li class="list-group-item">
+  <%= gravatar_for user, size: 30 %>
+  <%= link_to user.name, user %> 
+  <% if current_user.admin? && !current_user?(user) %> <%= link_to "Delete", user, class: 'badge btn btn-lg btn-warning', method: :delete, data: { confirm: "Are You Sure" } %>
+  <% end %>
+</li>
