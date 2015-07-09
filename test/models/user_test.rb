@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "Error for nil digest" do
-    assert_not @user.authenticated?('')
+    assert_not @user.authenticated?(:remember, '')
   end
   
   test "User must be valid" do
