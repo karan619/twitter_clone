@@ -79,4 +79,12 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_equal mix.downcase, @user.reload.email
   end
+
+  test "destroy microposts at user deletion" do
+    @user.save
+    @user.microposts.create!(content: "Lorem Ipsum")
+    assert_difference 'Micropost.count', -1 do
+      @user.destroy
+    end
+  end
 end

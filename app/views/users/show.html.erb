@@ -1,10 +1,18 @@
 <% provide(:title, @user.name) %>
-<div class="pull-left">
-  <div class="thumbnail">
-    <%= gravatar_for(@user) %>
+<div class="row">
+  <div class="col-md-4 thumbnail well">
+    <%= gravatar_for(@user, size: 280) %>
     <div class="caption">
-<hr/>
       <h1><%= @user.name %></h1>
     </div>
+  </div>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="list-group well">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
   </div>
 </div>

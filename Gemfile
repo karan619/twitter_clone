@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick'
 # Lets use rename gem
 gem 'rename'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
