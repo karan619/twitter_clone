@@ -80,7 +80,7 @@ Rails.application.configure do
   # Configuration for sendgrid on heroku
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'twitter619.herokuapp.com'
+  host = 'tweetposts.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
