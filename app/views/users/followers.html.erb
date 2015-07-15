@@ -1,0 +1,14 @@
+<% provide(:title, @title) %>
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+<table class="table table-hover">
+<% @followers.each do |f| %>
+	<% u = User.find(f.follower_id) %>
+	<tr>
+	<td><%= gravatar_for(u, size: 45) %>
+	<%= link_to u.name, user_path(u), class: 'btn btn-lg btn-link' %></td>
+	</tr>
+<% end %>
+</table>
+</div>
+</div>

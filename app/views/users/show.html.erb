@@ -3,15 +3,17 @@
   <div class="col-md-4 thumbnail well">
     <%= gravatar_for(@user, size: 280) %>
     <div class="caption">
-      <h1><%= @user.name %></h1>
+    <h2 class="text-center"><%= @user.name %></h2>
+    <%= render 'shared/stats' %>
+  <div id="follow_form" class="text-center"><%= render 'users/follow_form' if logged_in? %> </div>
     </div>
   </div>
   <div class="col-md-8">
     <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="list-group well">
+      <h3><%= pluralize(@user.microposts.count, "Tweet") %></h3>
+      <ul class="list-group well">
         <%= render @microposts %>
-      </ol>
+      </ul>
       <%= will_paginate @microposts %>
     <% end %>
   </div>
